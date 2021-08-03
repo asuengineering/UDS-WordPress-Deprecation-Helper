@@ -1,0 +1,42 @@
+{
+  "admin.js": "plugin/admin.js",
+  "admin.js.map": "admin.3f4aaa434d0c87dcc89a.hot-update.js.map",
+  "plugin/admin.js.map": "plugin/admin.js.map",
+  "public.js": "plugin/public.js",
+  "public.js.map": "plugin/public.js.map",
+  "runtime.js": "plugin/runtime.js",
+  "runtime.js.map": "plugin/runtime.js.map",
+  "vendors~admin~public.js": "plugin/vendors~admin~public.js",
+  "vendors~admin~public.js.map": "plugin/vendors~admin~public.js.map",
+  "wpackioEp": {
+    "admin": {
+      "assets": {
+        "js": [
+          "plugin/runtime.js",
+          "plugin/vendors~admin~public.js",
+          "plugin/admin.js"
+        ],
+        "js.map": [
+          "plugin/runtime.js.map",
+          "plugin/vendors~admin~public.js.map",
+          "plugin/admin.js.map",
+          "admin.3f4aaa434d0c87dcc89a.hot-update.js.map"
+        ]
+      }
+    },
+    "public": {
+      "assets": {
+        "js": [
+          "plugin/runtime.js",
+          "plugin/vendors~admin~public.js",
+          "plugin/public.js"
+        ],
+        "js.map": [
+          "plugin/runtime.js.map",
+          "plugin/vendors~admin~public.js.map",
+          "plugin/public.js.map"
+        ]
+      }
+    }
+  }
+}
