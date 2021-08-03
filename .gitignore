@@ -70,3 +70,7 @@ assets/img/.DS_Store
 # WebPack.io, Local Environment Config #
 ##########
 wpackio.server.js
+
+# PHPCS #
+##########
+/.phpcs-cache
