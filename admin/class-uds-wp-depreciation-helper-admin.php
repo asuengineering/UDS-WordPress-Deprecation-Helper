@@ -132,7 +132,10 @@ class Uds_Wp_Depreciation_Helper_Admin {
 	 * Create load path for ACF Local JSON file. 
 	 */
 	public function udswp_depreciation_helper_acf_json_load_point( $paths ) {
-		$paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json';
+		$paths = [
+			plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json',
+			plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json/uds-hero-v1'
+		];
 		return $paths;
 	}
 
