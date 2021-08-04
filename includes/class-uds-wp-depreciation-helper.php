@@ -171,6 +171,11 @@ class Uds_Wp_Depreciation_Helper {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/tgmpa/class-tgm-plugin-activation.php';	// Loads TGMPA script
+		$this->loader->add_action( 'tgmpa_register', $plugin_admin, 'udswp_depreciation_helper_register_required_plugins' );
+
+		$this->loader->add_filter( 'acf/settings/load_json', $plugin_admin, 'udswp_depreciation_helper_acf_json_load_point' );
 
 	}
 

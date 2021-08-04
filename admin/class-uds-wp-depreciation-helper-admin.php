@@ -88,5 +88,52 @@ class Uds_Wp_Depreciation_Helper_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/uds-wp-depreciation-helper-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+	/** 
+	 * Perform TGMPA check for dependent plugins. Requires ACF Pro.
+	 */
+	public function udswp_depreciation_helper_register_required_plugins() {
+		/*
+		 * This check requires the TGMPA class.
+		 * Array of plugin arrays. Required keys are name and slug.
+		 * If the source is NOT from the .org repo, then source is also required.
+		 */
+		$plugins = array(
+	
+			// The 'is_callable' setting checks for the ability to register a block, specific for ACF Pro.
+			array(
+				'name'        => 'Advanced Custom Fields Pro',
+				'slug'        => 'advanced-custom-fields-pro',
+				'is_callable' => 'acf_register_block_type',
+				'required'    => 'true',
+			),
+	
+		);
+	
+		/*
+		 * Array of configuration settings.
+		 */
+		$config = array(
+			'id'           => 'udswp-depreciation-helper',     // Unique ID for hashing notices for multiple instances of TGMPA.
+			'default_path' => '',                      // Default absolute path to bundled plugins.
+			'menu'         => 'tgmpa-install-plugins', // Menu slug.
+			'parent_slug'  => 'plugins.php',            // Parent menu slug.
+			'capability'   => 'manage_options',         // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+			'has_notices'  => true,                    // Show admin notices or not.
+			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+			'message'      => '',                      // Message to output right before the plugins table.
+		);
+	
+		tgmpa( $plugins, $config );
+	}
+
+	/** 
+	 * Create load path for ACF Local JSON file. 
+	 */
+	public function udswp_depreciation_helper_acf_json_load_point( $paths ) {
+		$paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json';
+		return $paths;
+	}
 
 }
