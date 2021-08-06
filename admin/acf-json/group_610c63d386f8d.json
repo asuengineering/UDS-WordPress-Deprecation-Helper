@@ -1,0 +1,43 @@
+{
+    "key": "group_610c63d386f8d",
+    "title": "UDS Options: Deprecation",
+    "fields": [
+        {
+            "key": "field_610c640fcd288",
+            "label": "Enable v1 hero metabox?",
+            "name": "uds-depreciation-panel-v1-hero",
+            "type": "true_false",
+            "instructions": "<p>Enabling this option restores the early-generation hero metabox that appears at the bottom of the editor for all pages. It also restores the ability to toggle on\/off the page title in favor of the metabox information.<\/p>\r\n<p>The hero metabox has been replaced by a new ACF-powered Gutenberg block which allows for the reuse of other \"component\" blocks within like the native header block. See this pull request for further information [link]<\/p>\r\n<p>Remediation efforts for this content should be completed by [date], at which point this option will be disabled.<\/p>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Enabled",
+            "ui_off_text": "Disabled"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "deprecation-helper"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "A theme options panel for the UDS-WordPress Deprecation Helper plugin.",
+    "modified": 1628271810
+}
