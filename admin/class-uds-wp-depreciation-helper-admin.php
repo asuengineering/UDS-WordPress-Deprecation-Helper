@@ -129,13 +129,35 @@ class Uds_Wp_Depreciation_Helper_Admin {
 	}
 
 	/** 
+	 * Create theme options page which checks which ACF partials should be loaded.
+	 */
+	public function udswp_deprecation_helper_acf_create_options_panel() {
+		if( function_exists('acf_add_options_page') ) {
+	
+			acf_add_options_page(array(
+				'page_title' 	=> 'Deprecation Helper',
+				'menu_title'	=> 'Deprecation Helper',
+				'menu_slug' 	=> 'deprecation-helper',
+				'parent_slug'   => 'options-general.php',
+				'capability'	=> 'edit_posts',
+				'redirect'		=> false
+			));
+		}
+	}
+
+	/** 
 	 * Create load path for ACF Local JSON file. 
 	 */
 	public function udswp_depreciation_helper_acf_json_load_point( $paths ) {
-		$paths = [
-			plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json',
-			plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json/uds-hero-v1'
-		];
+		
+		// These should always be loaded.
+		$paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json';
+
+		// Check for v1 Hero option. Load ACF JSON fields if needed.
+		if ( get_field( 'uds-depreciation-panel-v1-hero', 'options') ) {
+			$paths[] = plugin_dir_path( dirname( __FILE__ ) ) . 'admin/acf-json/uds-hero-v1';
+		}
+		
 		return $paths;
 	}
 

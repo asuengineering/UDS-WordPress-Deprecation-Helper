@@ -172,9 +172,14 @@ class Uds_Wp_Depreciation_Helper {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		
+		// Check for ACF Pro using TGMPA
 		require_once plugin_dir_path( dirname( __FILE__ ) ) .  'admin/tgmpa/class-tgm-plugin-activation.php';	// Loads TGMPA script
 		$this->loader->add_action( 'tgmpa_register', $plugin_admin, 'udswp_depreciation_helper_register_required_plugins' );
 
+		// Load the plugin options panel
+		$this->loader->add_action( 'acf/init', $plugin_admin, 'udswp_deprecation_helper_acf_create_options_panel');
+		
+		// Load the ACF JSON files conditionally based on options set in panel.
 		$this->loader->add_filter( 'acf/settings/load_json', $plugin_admin, 'udswp_depreciation_helper_acf_json_load_point' );
 
 	}
