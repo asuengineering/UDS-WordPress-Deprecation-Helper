@@ -1,27 +1,16 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress or ClassicPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              https://engineering.asu.edu
- * @since             0.1
- * @package           Uds_Wp_Depreciation_Helper
- *
- * @wordpress-plugin
- * Plugin Name:       UDS WordPress Deprecation Helper
+ * Plugin Name:       UDS-WordPress Deprecation Helper
  * Plugin URI:        https://github.com/asuengineering/UDS-WordPress-Deprecation-Helper
  * Description:       A plugin to run along side of the UDS-WordPress theme for ASU. Contains deprecated blocks and other theme pieces. Use as a crutch until production sites can be remediated.
- * Version:           0.1
  * Author:            Steve Ryan
  * Author URI:        https://engineering.asu.edu/
- * License:           GPL-2.0+
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       uds-wp-depreciation-helper
  * Domain Path:       /languages
+ * 
+ * GitHub Plugin URI: https://github.com/asuengineering/UDS-WordPress-Deprecation-Helper
+ * Version:           0.1
+ *
  */
 
 // If this file is called directly, abort.
