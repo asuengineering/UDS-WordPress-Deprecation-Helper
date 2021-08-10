@@ -78,7 +78,7 @@ class Uds_Wp_Depreciation_Helper_Admin {
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Enqueues global JavaScript files for the admin area.
 	 *
 	 * @since    0.1
 	 * @param string $hook_suffix The current admin page.
@@ -88,6 +88,7 @@ class Uds_Wp_Depreciation_Helper_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/uds-wp-depreciation-helper-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
+
 	/** 
 	 * Perform TGMPA check for dependent plugins. Requires ACF Pro.
 	 */
@@ -146,7 +147,7 @@ class Uds_Wp_Depreciation_Helper_Admin {
 	}
 
 	/** 
-	 * Create load path for ACF Local JSON file. 
+	 * Create load paths for ACF Local JSON files. 
 	 */
 	public function udswp_depreciation_helper_acf_json_load_point( $paths ) {
 		

@@ -77,7 +77,7 @@ class Uds_Wp_Depreciation_Helper_Public {
 	}
 
 	/**
-	 * Register the JavaScript for the public-facing side of the site.
+	 * Enqueues the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    0.1
 	 */
@@ -86,6 +86,20 @@ class Uds_Wp_Depreciation_Helper_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/uds-wp-depreciation-helper-public.js', array( 'jquery' ), $this->version, true );
 
 	}
+
+	/**
+	 * Enqueues additional registered files conditionally based on an options setting.
+	 *
+	 * @since    0.1
+	 */
+	public function conditional_enqueue_scripts() {
+
+		// Check for v1 Hero option. Load hero_video.js if needed.
+		if ( get_field( 'uds-depreciation-panel-v1-hero', 'options') ) {
+			wp_enqueue_script( 'uds-wordpress-hero-video-scripts', plugin_dir_url( __FILE__ ) . 'js/hero_video.js', array( 'jquery' ), $this->version, true );
+		}
+			
+	}	
 
 	/**
 	 * Example of Shortcode processing function.
