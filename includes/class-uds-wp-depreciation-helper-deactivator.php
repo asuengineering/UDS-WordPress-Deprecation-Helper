@@ -38,7 +38,7 @@ class Uds_Wp_Depreciation_Helper_Deactivator {
 	 * @access   private
 	 * @var      string    $plugin    The $_REQUEST['plugin'] value during plugin activation.
 	 */
-	private static $plugin = 'uds-wp-depreciation-helper/uds-wp-depreciation-helper.php';
+	private static $plugin  = 'UDS-WordPress-Deprecation-Helper/uds-wp-depreciation-helper.php';
 
 	/**
 	 * The $_REQUEST['action'] during plugin activation.

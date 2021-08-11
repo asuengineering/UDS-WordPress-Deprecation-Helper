@@ -9,7 +9,7 @@
  * Domain Path:       /languages
  * 
  * GitHub Plugin URI: https://github.com/asuengineering/UDS-WordPress-Deprecation-Helper
- * Version:           0.1
+ * Version:           0.1.1
  *
  */
 
